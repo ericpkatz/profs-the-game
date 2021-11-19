@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const redisClient = require('redis').createClient();
+const redisClient = require('redis').createClient(process.env.REDIS_URL);
 
 
 app.use('/client', express.static(path.join(__dirname, 'client')));
